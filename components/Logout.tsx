@@ -12,7 +12,7 @@ export default function Logout() {
     <button
       onClick={async () => {
         await signOut();
-        router.push("/login");
+        router.push("/");
       }}
       className="px-2 bg-white text-black"
     >
