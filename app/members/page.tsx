@@ -5,6 +5,8 @@ import { revalidatePath } from "next/cache";
 import { AuthGetCurrentUserServer, cookiesClient } from "@/utils/amplify-utils";
 
 import Logout from "@/components/Logout";
+import { Header } from "@/components/Header";
+import { Container } from "@/components/Container";
 
 async function App() {
   const user = await AuthGetCurrentUserServer();
@@ -23,16 +25,21 @@ async function App() {
 
   return (
     <>
-      <h1>Hello, Amplify 👋</h1>
-      {user && <Logout />}
-      <form action={addTodo}>
-        <input type="text" name="title" />
-        <button type="submit">Add Todo</button>
-      </form>
+      <Header />
+      <main>
+        <Container>
+          <h1>Hello, Amplify 👋</h1>
+          {user && <Logout />}
+          <form action={addTodo}>
+            <input type="text" name="title" />
+            <button type="submit">Add Todo</button>
+          </form>
 
-      <ul>
-        {todos && todos.map((todo) => <li key={todo.id}>{todo.content}</li>)}
-      </ul>
+          <ul>
+            {todos && todos.map((todo) => <li key={todo.id}>{todo.content}</li>)}
+          </ul>
+        </Container>
+      </main>
     </>
   );
 }

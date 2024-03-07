@@ -18,10 +18,10 @@ function Core({ user }: { user?: AuthUser }) {
 
 export const Login = withAuthenticator(Core, {
   variation: "default",
-  initialState: "signUp",
+  initialState: "signIn",
 });
 
 export const Register = withAuthenticator(Core, {
   variation: "default",
-  initialState: "signIn",
+  initialState: "signUp",
 });
