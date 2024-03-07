@@ -1,12 +1,13 @@
 // components/Login.tsx
 "use client";
 
+// import { Authenticator, ThemeProvider } from "@aws-amplify/ui-react";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import { AuthUser } from "aws-amplify/auth";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
 
-function Login({ user }: { user?: AuthUser }) {
+function Core({ user }: { user?: AuthUser }) {
   useEffect(() => {
     if (user) {
       redirect("/members");
@@ -15,4 +16,12 @@ function Login({ user }: { user?: AuthUser }) {
   return null;
 }
 
-export default withAuthenticator(Login);
+export const Login = withAuthenticator(Core, {
+  variation: "default",
+  initialState: "signUp",
+});
+
+export const Register = withAuthenticator(Core, {
+  variation: "default",
+  initialState: "signIn",
+});
