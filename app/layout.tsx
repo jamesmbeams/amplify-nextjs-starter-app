@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lexend } from "next/font/google";
 import clsx from "clsx";
 import "@/styles/tailwind.css";
+import '@aws-amplify/ui-react/styles.css';
 
 import ConfigureAmplifyClientSide from "@/components/ConfigureAmplify";
 

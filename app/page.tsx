@@ -1,13 +1,15 @@
 import { Header } from "@/components/Header";
-import { HomeCopy } from "@/components/HomeCopy";
+import { Hero } from '@/components/Hero';
+import { Footer } from '@/components/Footer';
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        <HomeCopy />
+        <Hero />
       </main>
+      <Footer />
     </>
   );
 }
