@@ -6,7 +6,7 @@
     "dev": "next dev --turbo -p 35000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && tsc --noEmit",
     "sandbox": "amplify sandbox --profile vi"
   },
   "dependencies": {
